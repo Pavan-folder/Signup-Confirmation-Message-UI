@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <title>Newsletter Sign-up Form</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="form-container">
+  <!-- Left text and form -->
+  <div class="form-content">
+    <h1>Stay updated!</h1>
+    <p>Join 60,000+ product managers receiving monthly updates on:</p>
+    <div class="hh"><img src="./icon-list.svg" /> <p>Product discovery and building what matters</p></div>
+    <div class="hh"><img src="./icon-list.svg" /> <p>Measuring to ensure updates are a success</p></div>
+    <div class="hh"><img src="./icon-list.svg" /> <p>And much more!</p></div>
+    <p>Email address </p>
+    <input type="email" placeholder="email@company.com" id="mail" />
+    <p id="hh" style="color: red;"></p>
+    <input type="submit" value="Subscribe to monthly newsletter" id="sub" onclick="sub1()" />
+  </div>
+
+  <!-- Right image -->
+  <div class="form-image">
+    <picture>
+      <source media="(max-width: 768px)" srcset="./illustration-sign-up-mobile.svg" />
+      <img src="./illustration-sign-up-desktop.svg" />
+    </picture>
+  </div>
+</div>
+
+<!-- Success message -->
+<div id="gg">
+  <img src="./icon-success.svg" />
+  <h1>Thanks for subscribing!</h1>
+  <p>
+    A confirmation email has been sent to ash@loremcompany.com.
+    Please open it and click the button inside to confirm your subscription.
+  </p>
+  <input type="submit" value="Dismiss message" onclick="dismissMessage()" />
+</div>
+
+<script>
+  const sub1 = () => {
+    const mailin = document.getElementById("mail");
+    const mail = mailin.value;
+    if (mail.length >= 5 && mail.includes("@") && mail.includes(".")) {
+      document.getElementById("form-container").style.display = "none";
+      document.getElementById("gg").style.display = "block";
+    } else {
+      mailin.style.border = "1px solid red";
+      mailin.style.backgroundColor = "#FFCC99";
+      document.getElementById("hh").innerText = "Entered wrong email";
+    }
+  };
+
+  const dismissMessage = () => {
+    document.getElementById("form-container").style.display = "flex";
+    document.getElementById("gg").style.display = "none";
+    document.getElementById("mail").value = "";
+    document.getElementById("hh").innerText = "";
+    document.getElementById("mail").style.border = "";
+    document.getElementById("mail").style.backgroundColor = "";
+  };
+</script>
+
+</body>
+</html>
