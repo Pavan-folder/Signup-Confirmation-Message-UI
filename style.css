@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2d2e48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 900px;
+  gap: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-content {
+  flex: 1;
+}
+
+.form-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #1d1d2e;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #5b5b6e;
+  margin-top: 10px;
+}
+
+.hh {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.hh img {
+  margin-top: 3px;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+ background: linear-gradient(to bottom right, black, grey);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+input[type="submit"]:hover {
+ background: linear-gradient(to right, red, orange);
+
+}
+
+#gg {
+  display: none;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+#gg img {
+  width: 40px;
+  margin-bottom: 20px;
+}
+
+#gg h1 {
+  font-size: 2rem;
+  color: #1d1d2e;
+  margin-bottom: 15px;
+}
+
+#gg p {
+  font-size: 14px;
+  color: #5b5b6e;
+  margin-bottom: 30px;
+}
+
+#gg input[type="submit"] {
+  background-color: #232742;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#gg input[type="submit"]:hover {
+  background-color: #44495e;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+
+  .form-image img {
+    border-radius: 0;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  #gg {
+    margin: 20px;
+  }
+}
